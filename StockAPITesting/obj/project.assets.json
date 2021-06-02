@@ -5695,19 +5695,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\899178\\.nuget\\packages\\": {}
+    "C:\\Users\\warSPan\\.nuget\\packages\\": {},
+    "D:\\INSTALLED APPS\\x32\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\899178\\Downloads\\StockAPI\\StockAPI\\StockAPITesting\\StockAPITesting.csproj",
+      "projectUniqueName": "D:\\PROJECT\\REPOS\\Shruthi_Pharmacy_Medicine_Supply_Management_System\\Pharmacy-medicine-supply-Management-System\\StockAPITesting\\StockAPITesting.csproj",
       "projectName": "StockAPITesting",
-      "projectPath": "C:\\Users\\899178\\Downloads\\StockAPI\\StockAPI\\StockAPITesting\\StockAPITesting.csproj",
-      "packagesPath": "C:\\Users\\899178\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\899178\\Downloads\\StockAPI\\StockAPI\\StockAPITesting\\obj\\",
+      "projectPath": "D:\\PROJECT\\REPOS\\Shruthi_Pharmacy_Medicine_Supply_Management_System\\Pharmacy-medicine-supply-Management-System\\StockAPITesting\\StockAPITesting.csproj",
+      "packagesPath": "C:\\Users\\warSPan\\.nuget\\packages\\",
+      "outputPath": "D:\\PROJECT\\REPOS\\Shruthi_Pharmacy_Medicine_Supply_Management_System\\Pharmacy-medicine-supply-Management-System\\StockAPITesting\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\INSTALLED APPS\\x32\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\899178\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\warSPan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5721,8 +5726,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\899178\\Downloads\\StockAPI\\StockAPI\\StockAPI\\StockAPI.csproj": {
-              "projectPath": "C:\\Users\\899178\\Downloads\\StockAPI\\StockAPI\\StockAPI\\StockAPI.csproj"
+            "D:\\PROJECT\\REPOS\\Shruthi_Pharmacy_Medicine_Supply_Management_System\\Pharmacy-medicine-supply-Management-System\\StockAPI\\StockAPI.csproj": {
+              "projectPath": "D:\\PROJECT\\REPOS\\Shruthi_Pharmacy_Medicine_Supply_Management_System\\Pharmacy-medicine-supply-Management-System\\StockAPI\\StockAPI.csproj"
             }
           }
         }
@@ -5769,7 +5774,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

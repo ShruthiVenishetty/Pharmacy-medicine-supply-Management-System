@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MedicineSupplyPortal.Models.Schedule>
+
+@{
+    ViewData["Title"] = "Schedule";
+}
+<br />
+<h1 class="hh">Representator Schedule</h1>
+
+<br />
+
+<table class="table" style="color:white;">
+    <thead>
+        <tr>
+            <th>
+                Representative Name
+            </th>
+            <th>
+                Doctor Name
+            </th>
+            <th>
+                Treating Ailment
+            </th>
+            <th>
+                Medicine Name
+            </th>
+            <th>
+                Time Slot
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Doctor Contact No.
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatingAilment)
+            </td>
+            <td>
+                @foreach (var medicine in item.MedicineName)
+                {
+                    @medicine<br />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorContactNo)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+<div class="form-group text-center">
+    <input type="button" value="Back" class="btn btn-success" onclick="location.href='@Url.Action("SetSchedule", "Schedule")'" /> |
+    <input type="button" value="Logout" class="btn btn-dark" onclick="location.href='@Url.Action("LogOut", "Login")'" />
+</div>

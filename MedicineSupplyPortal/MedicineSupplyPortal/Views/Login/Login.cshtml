@@ -1,0 +1,31 @@
+﻿@model MedicineSupplyPortal.Models.Login
+
+@{ ViewData["Title"] = "Login";}
+<div class="col-md-4 main">
+    <h2 class="sign hh">Login</h2>
+    <form asp-action="Login" class="form1">
+     
+        <p style="color:red;">@ViewBag.Message</p>
+        
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Username" class="control-label font-weight-bold"></label>
+            <input asp-for="Username" class="form-control un" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="control-label font-weight-bold"></label>
+            <input asp-for="Password" class="form-control pass" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

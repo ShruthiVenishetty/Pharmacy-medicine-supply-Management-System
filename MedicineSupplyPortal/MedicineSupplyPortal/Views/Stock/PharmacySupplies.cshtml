@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MedicineSupplyPortal.Models.PharmacyMedicineSupply> 
+
+@{
+    ViewData["Title"] = "PharmacySupplies";
+}
+
+<h1 class="hh">Pharmacy Stock Supply</h1>
+
+<table class="table" style="color:white;">
+    <thead>
+        <tr>
+            <th>
+                Pharmacy Name
+            </th>
+            <th>
+                Medicine Name
+            </th>
+            <th>
+                Supply Count
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            
+             @foreach(var x in item.medicineAndSupply)
+             {
+                 <tr>
+                     <td>@item.PharmacyName</td>
+                     <td>@x.medicineName</td>
+                     <td>@x.supplyCount</td>
+                 </tr>
+             }
+            
+        }
+    </tbody>
+</table>
+<div class="form-group text-center">
+    <input type="button" value="Back" class="btn btn-success" onclick="location.href='@Url.Action("MedicineDemand", "Stock")'" /> |
+    <input type="button" value="Logout" class="btn btn-dark" onclick="location.href='@Url.Action("LogOut", "Login")'" />
+</div>

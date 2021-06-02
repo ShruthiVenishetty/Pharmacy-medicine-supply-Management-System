@@ -1,0 +1,26 @@
+﻿@model MedicineSupplyPortal.Models.StartDate
+
+@{
+    ViewData["Title"] = "Set Schedule";
+}
+
+<br />
+<br />
+<div class="container text-md-center">
+    <h4 class="h">Enter the Start Date of Schedule</h4>
+    <br />
+    <br />
+    <form asp-controller="Schedule" asp-action="Schedule" method="post">
+        <input class="fo" asp-for="@Model.Date" />
+        <br/>
+        <br />
+        <br />
+        <input type="submit" value="Create Schedule" class="btn btn-primary " />
+    </form>
+</div>
+<br />
+<br />
+<div class="form-group text-center">
+    <input type="button" value="Refresh" class="btn btn-success" onclick="location.href='@Url.Action("SetSchedule", "Schedule")'" /> |
+    <input type="button" value="Logout" class="btn btn-dark" onclick="location.href='@Url.Action("LogOut", "Login")'" />
+</div>

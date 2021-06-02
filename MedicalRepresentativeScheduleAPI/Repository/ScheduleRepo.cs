@@ -99,7 +99,7 @@ namespace MedicalRepresentativeScheduleAPI.Repository
             _log4net.Info("Data is being Read from MedicineStock api");
             using (var httpClient = new HttpClient())
             {
-                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://localhost:44364/MedicineStockInformation"))
+                using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://localhost:44397/"))
                 {
                     request.Headers.TryAddWithoutValidation("accept", "*/*");
 

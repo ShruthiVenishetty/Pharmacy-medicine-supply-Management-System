@@ -37,5 +37,24 @@ namespace ScheduleTesting
             List<Schedule> listOfPharma = scheduleRepoObject.GetSchedules(DateTime.Now);
             NUnit.Framework.Assert.That(listOfPharma, Has.No.Member("D6"));
         }
+
+        //[Test]
+        //public async Task Test_GetMedicineName()
+        //{
+        //    Mock<IScheduleRepo> supplyMock = new Mock<IScheduleRepo>();
+        //    ScheduleController sc = new ScheduleController(supplyMock.Object);
+        //    var result = await (sr.GetAllStock() as Task<List<MedicineStock>>);
+        //    var resultList = result.Result;
+        //    NUnit.Framework.Assert.Multiple(() =>
+        //    {
+        //        NUnit.Framework.Assert.IsNotNull(result[0].Name);
+        //        NUnit.Framework.Assert.IsNotNull(result[1].Name);
+        //        NUnit.Framework.Assert.IsNotNull(result[2].Name);
+        //        NUnit.Framework.Assert.IsNotNull(result[3].Name);
+        //        NUnit.Framework.Assert.IsNotNull(result[4].Name);
+
+        //    });
+        //}
+
     }
 }

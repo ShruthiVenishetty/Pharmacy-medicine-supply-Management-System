@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAPI", "StockAPI\StockAPI.csproj", "{1F368891-1F21-497F-9DE6-AC618E0587BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAPITesting", "StockAPITesting\StockAPITesting.csproj", "{21AA119C-6041-4395-86BB-741EED9B3321}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F368891-1F21-497F-9DE6-AC618E0587BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F368891-1F21-497F-9DE6-AC618E0587BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F368891-1F21-497F-9DE6-AC618E0587BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F368891-1F21-497F-9DE6-AC618E0587BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21AA119C-6041-4395-86BB-741EED9B3321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AA119C-6041-4395-86BB-741EED9B3321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AA119C-6041-4395-86BB-741EED9B3321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AA119C-6041-4395-86BB-741EED9B3321}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FD087A9-50BA-4CBF-8157-47A4F9BC5529}
+	EndGlobalSection
+EndGlobal

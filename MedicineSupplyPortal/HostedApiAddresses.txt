@@ -1,0 +1,8 @@
+"ApiBaseAddresses": {
+    //"Supplies": "https://localhost:44394/",
+    "Supplies": "https://medicinesupplymicroservice.azurewebsites.net/",
+    //"Schedule": "https://localhost:44374/",
+    "Schedule": " https://medicalrepresentativescheduleapi.azurewebsites.net/",
+    //"Jwt": "https://localhost:44332/"
+    "Jwt": "https://jwtauthfinal.azurewebsites.net/"
+  },

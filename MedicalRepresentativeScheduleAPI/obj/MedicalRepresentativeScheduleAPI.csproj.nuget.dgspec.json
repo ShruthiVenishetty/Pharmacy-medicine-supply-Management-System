@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rugved\\source\\repos\\PharmacyMedicineSupplyProject\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj": {}
+    "C:\\Users\\shinj\\Desktop\\Pharmacy-medicine-supply-Management-System\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rugved\\source\\repos\\PharmacyMedicineSupplyProject\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj": {
+    "C:\\Users\\shinj\\Desktop\\Pharmacy-medicine-supply-Management-System\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rugved\\source\\repos\\PharmacyMedicineSupplyProject\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj",
+        "projectUniqueName": "C:\\Users\\shinj\\Desktop\\Pharmacy-medicine-supply-Management-System\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj",
         "projectName": "MedicalRepresentativeScheduleAPI",
-        "projectPath": "C:\\Users\\Rugved\\source\\repos\\PharmacyMedicineSupplyProject\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj",
-        "packagesPath": "C:\\Users\\Rugved\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rugved\\source\\repos\\PharmacyMedicineSupplyProject\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI\\obj\\",
+        "projectPath": "C:\\Users\\shinj\\Desktop\\Pharmacy-medicine-supply-Management-System\\MedicalRepresentativeScheduleAPI\\MedicalRepresentativeScheduleAPI.csproj",
+        "packagesPath": "C:\\Users\\shinj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shinj\\Desktop\\Pharmacy-medicine-supply-Management-System\\MedicalRepresentativeScheduleAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rugved\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\shinj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

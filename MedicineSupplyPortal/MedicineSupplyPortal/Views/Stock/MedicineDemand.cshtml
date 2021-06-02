@@ -1,0 +1,43 @@
+﻿@model List<MedicineSupplyPortal.Models.MedicineDemand>
+
+@{ ViewData["Title"] = "Supply"; }
+
+<h1 style="text-align:center; font-family:Verdana, Geneva, Tahoma, sans-serif;">Medicine Demand</h1>
+<br />
+
+
+<div class="container">
+
+    <form asp-controller="Stock" asp-action="PharmacySupplies" method="post">
+        <table class="table  table-bordered">
+            <thead>
+                <tr>
+                    <th style="color:white">Medicine Name</th>
+                    <th style="color:white">Demand Count</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+    <tr>
+        <td style="color:white">
+            @Model[i].MedicineName
+            <input asp-for="@Model[i].MedicineName" class="d-none" />
+        </td>
+        <td>
+            <input asp-for="@Model[i].DemandCount" class="form-control" />
+        </td>
+    </tr>}
+            </tbody>
+        </table>
+        <div class="form-group text-center">
+            <input type="submit" value="SaveData" class="btn btn-primary" />
+            </div>
+    </form>
+</div>
+<div class="form-group text-center">
+        <input type="button" value="Refresh" class="btn btn-success" onclick="location.href='@Url.Action("MedicineDemand", "Stock")'" /> |
+        <input type="button" value="Logout" class="btn btn-dark" onclick="location.href='@Url.Action("LogOut", "Login")'" />
+</div>
+

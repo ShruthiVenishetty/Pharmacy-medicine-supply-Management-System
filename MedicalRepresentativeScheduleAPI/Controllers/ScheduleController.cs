@@ -23,7 +23,7 @@ namespace MedicalRepresentativeScheduleAPI.Controllers
         }
 
         [HttpGet("RepSchedule")]
-     //[Authorize(Roles = "Representative")]
+        [Authorize(Roles = "Representative")]
         public ActionResult GetRepSchedule(DateTime d)
         {
             _log4net.Info("Controller GetRepSchedule is invoked");

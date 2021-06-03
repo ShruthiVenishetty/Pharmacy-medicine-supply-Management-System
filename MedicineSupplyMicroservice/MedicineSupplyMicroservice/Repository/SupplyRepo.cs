@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using MedicineSupplyMicroservice.Models;
 using System;
@@ -25,7 +25,7 @@ namespace MedicineSupplyMicroservice.Repository
         public List<String> GetListOfPharmacy()
         {
             _log4net.Info("Accessing PharmacyData File");
-            return (pd.pharmacies);
+            return pd.pharmacies;
         }
 
 
@@ -34,40 +34,48 @@ namespace MedicineSupplyMicroservice.Repository
 
         public async Task<List<PharmacyMedicineSupply>> GetPharmacySupply(List<MedicineDemand> lisMedDemand)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                List<MedicineStock> medStock = new List<MedicineStock>();
-                List<PharmacyMedicineSupply> medSupply = new List<PharmacyMedicineSupply>();
-                client.BaseAddress = new Uri(Baseurl);
-
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                //Sending request to find web api REST service resource MedicineDemand using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("MedicineStockInformation");
-                if (Res.IsSuccessStatusCode)
+                using (HttpClient client = new HttpClient())
                 {
-                    _log4net.Info("Stock API Accessed successfully");
+                    List<MedicineStock> medStock = new List<MedicineStock>();
+                    List<PharmacyMedicineSupply> medSupply = new List<PharmacyMedicineSupply>();
+                    client.BaseAddress = new Uri(Baseurl);
 
-                    //Storing the response details recieved from web api   
-                    var StockResponse = Res.Content.ReadAsStringAsync().Result;
+                    client.DefaultRequestHeaders.Clear();
+                    //Define request data format  
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //Sending request to find web api REST service resource MedicineDemand using HttpClient  
+                    HttpResponseMessage Res = await client.GetAsync("MedicineStockInformation");
+                    if (Res.IsSuccessStatusCode)
+                    {
+                        _log4net.Info("Stock API Accessed successfully");
+
+                        //Storing the response details recieved from web api   
+                        var StockResponse = Res.Content.ReadAsStringAsync().Result;
 
 
-                    medStock = JsonConvert.DeserializeObject<List<MedicineStock>>(StockResponse);
+                        medStock = JsonConvert.DeserializeObject<List<MedicineStock>>(StockResponse);
 
+                    }
+
+                    for (int i = 0; i < medStock.Count; i++)
+                    {
+                        supCount.Add(new MedicineNameAndSupply { medicineName = medStock[i].Name, supplyCount = (lisMedDemand[i].DemandCount > medStock[i].NumberOfTabletsInStock) ? medStock[i].NumberOfTabletsInStock / pd.pharmacies.Count : lisMedDemand[i].DemandCount / pd.pharmacies.Count });
+                    }
+
+                    for (int i = 0; i < pd.pharmacies.Count; i++)
+                    {
+                        medSupply.Add(new PharmacyMedicineSupply { pharmacyName = pd.pharmacies[i], medicineAndSupply = supCount });
+                    }
+                    return medSupply;
                 }
-
-                for (int i = 0; i < medStock.Count; i++)
-                {
-                    supCount.Add(new MedicineNameAndSupply { medicineName = medStock[i].Name, supplyCount = (lisMedDemand[i].DemandCount > medStock[i].NumberOfTabletsInStock) ? medStock[i].NumberOfTabletsInStock / pd.pharmacies.Count : lisMedDemand[i].DemandCount / pd.pharmacies.Count });
-                }
-
-                for (int i = 0; i < pd.pharmacies.Count; i++)
-                {
-                    medSupply.Add(new PharmacyMedicineSupply { pharmacyName = pd.pharmacies[i], medicineAndSupply = supCount });
-                }
-                return medSupply;
+            }
+            catch(Exception e )
+            {
+                _log4net.Warn(e.Message);
+                return null;
             }
 
         }
@@ -76,29 +84,37 @@ namespace MedicineSupplyMicroservice.Repository
         {
 
             List<MedicineStock> medicineStock = new List<MedicineStock>();
-            using (HttpClient client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri(Baseurl);
-
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                //Sending request to find web api REST service resource MedicineDemand using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("MedicineStockInformation");
-                if (Res.IsSuccessStatusCode)
+                using (HttpClient client = new HttpClient())
                 {
-                    _log4net.Info("Stock API Accessed successfully");
+                    client.BaseAddress = new Uri(Baseurl);
 
-                    //Storing the response details recieved from web api   
-                    var StockResponse = Res.Content.ReadAsStringAsync().Result;
+                    client.DefaultRequestHeaders.Clear();
+                    //Define request data format  
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //Sending request to find web api REST service resource MedicineDemand using HttpClient  
+                    HttpResponseMessage Res = await client.GetAsync("MedicineStockInformation");
+                    if (Res.IsSuccessStatusCode)
+                    {
+                        _log4net.Info("Stock API Accessed successfully");
+
+                        //Storing the response details recieved from web api   
+                        var StockResponse = Res.Content.ReadAsStringAsync().Result;
 
 
-                    medicineStock = JsonConvert.DeserializeObject<List<MedicineStock>>(StockResponse);
+                        medicineStock = JsonConvert.DeserializeObject<List<MedicineStock>>(StockResponse);
 
+                    }
+
+                    return medicineStock;
                 }
-
-                return medicineStock;
+            }
+            catch(Exception e)
+            {
+                _log4net.Warn(e.Message);
+                return null;
             }
         }
     }
